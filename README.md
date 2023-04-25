@@ -1,12 +1,17 @@
 # BDM-Workshop
-Material for workshop
 
-Dauer: 
-- 3h (13 - 16)
-- 3 x 45-50min
+- Dauer: 3h (13 - 16), respektive  3 x 45-50min
+- Anzahl Teilnehmer: ca. 8 Personen
+- Aufbau: Zu Beginn jedes der drei Blöcke kurze Inputs à 10 - 15min, danach zusammen coden.
+- Prerequisits:
+ - Etwas R Kentnisse (wurde bereits so kommuniziert)
+ - Einen aktuelle R Installation (min 4.2), muss noch kommuniziert werden (Verweis auf CMA Unterlagen?)
+ - Eine akutalisierte IDE, vorzugsweise RStudio, muss noch kommuniziert werden (Verweis auf CMA Unterlagen?)
+
+
 
 Outline:
-- Einführung:
+- Einführung (10min):
   - Warum Shiny? 
     - *ich denke hier können wir uns kurz halten, die meisten werden sich nicht ohne Grund für einen Shiny Workshop angemeldet haben*
   - Stärken und Schwächen von Shiny: 
@@ -21,10 +26,11 @@ Outline:
     - *Shiny Apps sollten aber nicht verwendet werden, wenn es dazu eine alternative gibt*
       - *Beispiel ["Blood Banks in India"](https://opndt.shinyapps.io/bloodbank_india/)*: Hier wäre eine einfache webmap ausreichend gewesen
       - *Beispiel: DiZH Projekt*
-- Grundelemente einer Webapplikation
-  - Crash course in HTML, CSS und JavaScript
+- Grundelemente einer Webapplikation (40min)
+  - Crash course in HTML, CSS und JavaScript:
+    - Hier würde ich den JS Input aus dem Remote Sensing Kurs in kondensierter Form durchspielen und zusammen eine Applikation bauen, welche beispielsweise den eigenen Namen gedreht zurück gibt.
   - Übersetzung von HTML, CSS und JS in Shiny (HTML/CSS → UI, JS → server)
-  - Wir bauen eine erste Applikation
+- Wir bauen eine erste, einfache Applikation (20min)
 - Core conzept: Reactivity
   - Warum ist es wichtig?
   - Wie wird es implementiert? observeEvent, bindevent, reactive, eventreactive usw
