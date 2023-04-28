@@ -5,7 +5,7 @@
 Dauer | 3h (13 - 16) respektive  3 x 45-50min
 Anzahl | Teilnehmer: ca. 8 Personen
 Aufbau | Zu Beginn jedes der drei Blöcke kurze Inputs à 10 - 15min, danach zusammen coden.
-Prerequisites | - Etwas R Kentnisse (wurde bereits so kommuniziert) <br> - Einen aktuelle R Installation (min 4.2), muss noch kommuniziert werden (Verweis auf CMA Unterlagen?) <br> - Eine akutalisierte IDE, vorzugsweise RStudio, muss noch kommuniziert werden (Verweis auf CMA Unterlagen?)
+Prerequisites | - Etwas R Kentnisse (wurde bereits so kommuniziert) <br> - Einen aktuelle R Installation (min 4.2), muss noch kommuniziert werden (Verweis auf CMA Unterlagen?) <br> - Eine akutalisierte IDE, vorzugsweise RStudio, muss noch kommuniziert werden (Verweis auf CMA Unterlagen?) <br> - rstudio.zhaw.ch/rsconnect (muss noch kommuniziert werden)
 
 
 
@@ -26,7 +26,7 @@ Outline:
 
 [^warum-shiny]: ich denke hier können wir uns kurz halten, die meisten werden sich nicht ohne Grund für einen Shiny Workshop angemeldet haben
 
-[^pros-cons]: Wann macht Shiny Sinn, was sind die limiten?
+[^pros-cons]: Wann macht Shiny Sinn, was sind die Limiten?
 
     - Schnell erstellt, kostengünstig.
     - Kann von Domänexperten erstellt werden, braucht keine IT Spezialisten
