@@ -321,9 +321,7 @@ document.getElementById("percent").innerHTML = percent_text
     document.getElementById("percent").innerHTML = percent_text
 +}
 
-setInterval(update_progress, 100)
-
-
++setInterval(update_progress, 100)
 ```
 
 
