@@ -1,5 +1,6 @@
 library(shiny)
 library(readr)
+library(ggplot2)
 library(plotly)
 
 workshop_data <- read_delim("data/prepared/workshop_data.csv")
@@ -35,9 +36,10 @@ ui <- fluidPage(
       animate = animationOptions(interval = 100)
     )
   ),
-  mainPanel(plotlyOutput(
-    "scatter_plot", width = "100%", height = "800px"
-  ))
+  mainPanel(
+    plotOutput("scatter_ggplot", width = "100%", height = "800px")
+    #plotlyOutput("scatter_plotly", width = "100%", height = "800px")
+  )
 )
 
 server <- function(input, output) {
@@ -57,7 +59,18 @@ server <- function(input, output) {
     workshop_data_filted
   })
   
-  output$scatter_plot <- renderPlotly(
+  ##Simple ggplot
+  output$scatter_ggplot <- renderPlot({
+    selected_data() |>
+      ggplot(aes(x = LifeExpectancy, y = log10(GdpPerCapita), color = Region)) +
+      geom_point(aes(size = Population)) +
+      xlim(10, 90) +
+      ylim(2, 6) +
+      theme(legend.position = "none")
+  })
+  
+  ##Interactive plotly web plot 
+  output$scatter_plotly <- renderPlotly(
     selected_data() |>
       plotly::highlight_key( ~ Country) |>
       plot_ly(
