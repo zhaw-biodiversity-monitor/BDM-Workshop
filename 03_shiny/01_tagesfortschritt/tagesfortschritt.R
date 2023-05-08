@@ -1,5 +1,4 @@
 library(shiny)
-library(shinyWidgets)
 library(lubridate)
 
 #Calculation of time
