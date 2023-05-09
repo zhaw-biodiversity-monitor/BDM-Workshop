@@ -19,7 +19,8 @@
 
 # RStudio files
 .Rproj.user/
-
+.config/
+.local
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
