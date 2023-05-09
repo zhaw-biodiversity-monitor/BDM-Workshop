@@ -18,29 +18,53 @@ ul {
 
 }
 
-.html{
-    background: rgb(250, 128, 114, 0.5); 
-    
+.html {
+    background: rgb(250, 128, 114, 0.5);
+
 }
 
-.css{
-    background: rgb(75, 0, 130, 0.5); 
+.css {
+    background: rgb(75, 0, 130, 0.5);
 }
 
-.js{
-    background: rgb(154, 205, 50, 0.5); 
-    
+.js {
+    background: rgb(154, 205, 50, 0.5);
+
 }
 
-
-#wenn1 .html{
+#wenn1 .html {
     left: 90px;
 }
 
-#wenn1 .css{
+#wenn1 .css {
     left: -90px;
 }
 
-#wenn1 .js{
+#wenn1 .js {
     top: 90px;
+}
+
+.lektion-row{
+    
+}
+
+.lektion-row {
+    
+    border-radius: 10px;
+    /* padding-left: 20px; */
+    margin: 5px;
+    background-color:cadetblue;
+
+}
+
+.lektion-row div:nth-child(1) {
+    width: 300px;
+    height: 200px;
+    
+}
+
+.lektion-row div:nth-child(2){
+    width: 500px;
+    align-self: flex-start;
+    
 }
