@@ -17,7 +17,7 @@ Starten mit einer leeren html Datei. Diese Datei sowohl in RStudio wie auch in e
 
 ```diff
 <!DOCTYPE html>
-+<html>
+<html>
 +    <head>
 +
 +    </head>
