@@ -1,7 +1,46 @@
-ul{
+ul {
     font-size: xx-large;
 }
 
-.filename{
+.filename {
     margin-bottom: 10px;
+}
+
+.wenn {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: large;
+    position: relative;
+
+}
+
+.html{
+    background: rgb(250, 128, 114, 0.5); 
+    
+}
+
+.css{
+    background: rgb(75, 0, 130, 0.5); 
+}
+
+.js{
+    background: rgb(154, 205, 50, 0.5); 
+    
+}
+
+
+#wenn1 .html{
+    left: 90px;
+}
+
+#wenn1 .css{
+    left: -90px;
+}
+
+#wenn1 .js{
+    top: 90px;
 }
