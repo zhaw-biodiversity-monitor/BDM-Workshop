@@ -21,17 +21,17 @@ ul {
 
 }
 
-.wenn-large{
+.wenn-large {
     width: 400px;
     height: 400px;
     /* font-size: xxx-large; */
 }
 
-.wenn .wenn-large{
+.wenn .wenn-large {
     background-color: rgba(var(--rgb), 1) !important;
 }
 
-.wenn-small{
+.wenn-small {
     width: 100px;
     height: 100px;
 }
@@ -40,54 +40,50 @@ ul {
 
 .html {
     --rgb: 250, 131, 52;
-    background-color: rgba(var(--rgb), 1);    
+    background-color: rgba(var(--rgb), 1);
 }
 
-.html::before{
+.html::before {
     content: "HTML";
 }
 
-.css::before{
+.css::before {
     content: "CSS";
 }
 
-.js::before{
+.js::before {
     content: "JavaScript";
 }
 
 
 
-.html::after{
+.html::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f6e3"; 
+    content: "\f6e3";
 }
 
-.css::after{
+.css::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f55d"; 
+    content: "\f55d";
 }
 
-.js::after{
+.js::after {
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    content: "\f6e8"; 
+    content: "\f6e8";
 }
 
 
 .css {
     --rgb: 255, 253, 119;
     background-color: rgba(var(--rgb), 1)
-    
-
 }
 
 .js {
     --rgb: 56, 134, 151;
     background-color: rgba(var(--rgb), 1)
-    
-
 }
 
 #wenn1 .html {
@@ -105,27 +101,27 @@ ul {
     background-color: rgba(var(--rgb), 0.5);
 }
 
-.ui-server{
-    background-color: darkslategray; 
-    border-radius: 10px; 
-    padding-top: 5px; 
+.ui-server {
+    background-color: darkslategray;
+    border-radius: 10px;
+    padding-top: 5px;
     padding-bottom: 5px;
 }
 
-.font-large{
+.font-large {
     font-size: large
 }
 
-.black-stroke{
+.black-stroke {
     -webkit-text-stroke: 1px black;
 }
 
-.tagesprogramm{
+.tagesprogramm {
     display: flex;
     flex-direction: column;
 }
 
-.lektion{
+.lektion {
     display: flex;
     justify-content: space-around;
     align-items: stretch;
@@ -133,36 +129,39 @@ ul {
 }
 
 
-  .fragment.my-hl.visible {
+.fragment.my-hl.visible {
     text-decoration: underline;
     text-shadow: 0 0 1em blue, 0 0 0.2em blue;
 
 
-  }
+}
 
-.lektion > div:nth-child(1), .lektion > div:nth-child(2) > div{
+.lektion>div:nth-child(1),
+.lektion>div:nth-child(2)>div {
     background-color: cadetblue;
     margin: 10px;
     border-radius: 10px;
     padding: 10px;
     border: 1px solid white;
-    display: flex; /* make the div a flex-container to center h and v*/
-    align-items: center; /* align the text centered vertically */
+    display: flex;
+    /* make the div a flex-container to center h and v*/
+    align-items: center;
+    /* align the text centered vertically */
     /* justify-content: center; align the text centered horizontally */
 }
 
 
-.lektion > div:nth-child(2){
+.lektion>div:nth-child(2) {
     flex-grow: 1;
 }
 
-.lektion > div:nth-child(2) > div{
+.lektion>div:nth-child(2)>div {
     font-size: xx-large;
     padding-left: 10%;
 }
 
 
-.lektion > div:nth-child(1){
+.lektion>div:nth-child(1) {
     /* height: 200px; */
     padding-left: 30px;
     padding-right: 30px;
@@ -170,16 +169,114 @@ ul {
 }
 
 
-.blur .slide-background-content{
+.blur .slide-background-content {
     filter: blur(10px);
 }
 
-.filter .slide-background-content{
+.filter .slide-background-content {
     filter: blur(10px);
     filter: grayscale(80%) blur(5px);
 }
 
-.img-highlight{
-    position: absolute; 
+.img-highlight {
+    position: absolute;
     background-color: rgba(255, 0, 0, 0.156);
 }
+
+
+/* https://coolors.co/palette/264653-2a9d8f-e9c46a-f4a261-e76f51 */
+.shiny-container {
+    background-color: #f4a261;
+    height: 400px;
+    border-radius: 1px;
+    display: grid;
+    grid-template-columns: 70%;
+    gap: 5px;
+    justify-content: center;
+    align-content: start;
+    font-size: 20px;
+}
+
+.shiny-container2 {
+    grid-template-columns: 30% 70%;
+}
+
+.shiny-container>div {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.shiny-input {
+    background-color: #2a9d8f;
+}
+
+.shiny-output {
+    background-color: #264653;
+}
+
+.shiny-titlepanel {
+    background-color: #e76f51;
+
+}
+
+.shiny-container2 .shiny-titlepanel {
+    grid-column: 1 / span 2;
+}
+
+.reactive-outputs {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 15px;
+    padding-top: 30px;
+}
+
+.reactive-outputs > div {
+    padding: 10px;
+    background-color: #264653;
+    border-radius: 15px;
+    text-align: left;
+    padding-left: 40px;
+    font-family: monospace;
+    font-size: 20px;
+
+}
+
+.reactive-inputs{
+    display: grid;
+    grid-template-columns: 70% 30%;
+    gap: 15px;
+    align-items: stretch;
+    padding-top: 30px;
+
+}
+
+.reactive-inputs>div{
+    align-content: end;
+    align-items: center
+}
+
+.reactive-inputs div:nth-child(odd){
+    text-align: left;
+    padding-left: 40px;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.reactive-inputs div{
+    background-color: #264653;
+    border-radius: 15px;
+    font-size: 20px;
+
+
+}
+
+.action{
+    padding: 5px;
+}
+
+#checkbox{
+    list-style-type: none;
+}
+
+
+

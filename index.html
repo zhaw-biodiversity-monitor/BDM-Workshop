@@ -408,16 +408,139 @@
 
 			<section>
 				<section>
-					<h1>Reactivity Types</h1>
+					<h1 class="r-fit-text">Reactive building blocks</h1>
 				</section>
 
 				<section>
-					<ul>
-						<li>Reactive</li>
-						<li>Observe</li>
-						<li>ObserveEvent</li>
-					</ul>
+					<img data-src="images/reactive.png"></img>
+
+					<a href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>
 				</section>
+
+				<section>
+
+					Reactive Inputs 
+
+					<div class="reactive-inputs">
+
+						<div>actionButton()</div>
+						<div><input class = "action" type="button" value="Go"></div>
+						<div>checkboxGroupInput()</div>
+						<div>
+								<input type="checkbox" id="scales" name="scales" checked>
+								<label for="scales">Choice 1</label> <br>
+						  
+								<input type="checkbox" id="horns" name="horns">
+								<label for="horns">Choice 2</label>
+						</div>
+						<div>checkboxInput()</div>
+						<div>
+							<input type="checkbox" id="scales" name="scales" checked>
+							<label for="scales">Choose</label> <br>
+						</div>
+
+						<div>dateInput() / dateRangeInput()</div>
+						<div><input type="date" id="start"></div>
+
+						<div>fileInput()</div>
+						<div><input type="file" id="avatar"></div>
+
+						<div>numericInput()</div>
+						<div><input type="number"></div>
+
+						<div>passwordInput()</div>
+						<div><input type="password"></div>
+
+						<div>radioButtons()</div>
+						<div>
+								<input type="radio" id="huey" name="drone" value="huey"
+									   checked>
+								<label for="huey">Huey</label>
+						  
+								<input type="radio" id="dewey" name="drone" value="dewey">
+								<label for="dewey">Dewey</label>
+						  
+								<input type="radio" id="louie" name="drone" value="louie">
+								<label for="louie">Louie</label>
+						</div>
+
+						<div>sliderInput()</div>
+						<div><input type="range"></div>
+
+						<div>submitButton()</div>
+						<div><input class = "action" type="button" value="Apply Changes"></div>
+
+						<div>textInput()</div>
+						<div><input type="text"></div>
+
+					</div>
+
+				</section>
+
+
+				<section data-visibility="hidden">
+
+					Reactive Outputs
+
+					<img data-src="images/reactive-outputs.png"></img>
+
+					Mehr ouputs sind auf <a href="http://www.htmlwidgets.org/">htmlwidgets.org</a> zu finden
+				</section>
+
+				<section>
+
+					Reactive Outputs 
+
+					
+
+					<div class="reactive-outputs">
+
+						<div style="background-color:darkslategray;">Server</div>
+						<div style="background-color:darkslategray;">UI</div>
+
+						<div>renderDataTable()</div>
+						<div>dataTableOutput()</div>
+
+						<div>renderImage()</div>
+						<div>imageOutput()</div>
+
+						<div>renderPlot()</div>
+						<div>plotOutput()</div>
+
+						<div>renderPrint()</div>
+						<div>verbatimTextOutput()</div>
+
+						<div>renderTable()</div>
+						<div>tableOutput()</div>
+
+						<div>renderText()</div>
+						<div>textOutput()</div>
+
+						<div>renderUI()</div>
+						<div>uiOutput()</div>
+
+					</div>
+					
+				</section>
+
+
+				<section>
+					<pre><code data-trim class="r" data-line-numbers="|3|6">
+						library(shiny)
+
+						ui <- plotOutput("plot")
+
+						server <- function(input, output, session){
+							output$plot <- renderPlot(plot(rnorm(100)))
+						}
+
+
+						shinyApp(ui, server)
+					</code></pre>
+				</section>
+
+
+				
 
 
 			</section>
@@ -428,11 +551,101 @@
 			
 				</section>
 
-				<section>
-					<div class="r-stack" style="width: 60%; margin-left: auto; margin-right: auto;">
-						<img class="fragment" src="images/layout-sidebar.png" alt="reactivity" style="width: 100%; height: auto;">
-						<img class="fragment" src="images/layout-multirow.png" alt="reactivity" style="width: 100%; height: auto;">
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									# input 1
+									# input 2
+									# output 1
+									# output 2
+								)
+							</code></pre>
+	
+						</div>
+
+						<div>
+							<div class="shiny-container">
+								<div data-id="input1" class="shiny-input">Input 1</div>
+								<div data-id="input2" class="shiny-input">Input 2</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+								<div data-id="output2" class="shiny-output">Output 2</div>
+							</div>
+						</div>
+				
 					</div>
+				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									# input 1
+									# input 2
+									# output 1
+									# output 2
+								)
+							</code></pre>
+	
+						</div>
+						<div>
+							<div class="shiny-container">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="input1" class="shiny-input">Input 1</div>
+								<div data-id="input2" class="shiny-input">Input 2</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+								<div data-id="output2" class="shiny-output">Output 2</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									sidebarLayout(
+										sidebarPanel(
+											# input 1
+											# input 2
+										),
+										mainPanel(
+											# output 1
+											# output 2
+										)
+									)
+							</code></pre>
+	
+						</div>
+						<div>
+							<div class="shiny-container shiny-container2">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="input1" class="shiny-input">Input 1</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+
+								<div data-id="input2" class="shiny-input">Input 2</div>
+								<div data-id="output2" class="shiny-output">Output 2</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					Es gibt noch viele andere Layouts:
+
+					<ul>
+						<li class="fragment"><code>fluidPage()</code> mit <code>fluidRow()</code></li>
+						<li class="fragment"><code>fluidPage()</code> mit <code>tabsetPanel()</code> und <code>tabPanel()</code></li>
+						<li class="fragment"><code>fluidPage()</code> mit <code>navlistPanel()</code>und <code>tabPanel()</code></li>
+						<li class="fragment"><code>navbarPage()</code> mit <code>tabPanel()</code>und <code>navbarMenu()</code></li>
+
+					</ul>
+
+					<p class="fragment">Siehe <a href="https://shiny.posit.co/r/articles/build/layout-guide/">shiny.posit.co/r/articles/build/layout-guide/</a> und <a href="https://mastering-shiny.org/action-layout.html">mastering-shiny.org/action-layout.html</a> für mehr Informationen.</p>
+
 
 				</section>
 			</section>
