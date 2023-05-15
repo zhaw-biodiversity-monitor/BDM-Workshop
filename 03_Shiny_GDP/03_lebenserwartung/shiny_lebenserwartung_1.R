@@ -19,10 +19,10 @@ myvis1 <- function(dataset, year, region){
   # browser()
   dataset %>% 
     # filter(Year ==  year) %>%
-    filter(Region == region) %>% 
+    filter(Region == region) %>%
     # filter(Country %in% c("Afghanistan", "Eswatini")) %>%
-    plotly::plot_ly(y = ~LifeExpectancy, color = ~Region, x = ~log10(GdpPerCapita),size = ~Population, text = ~Country, frame = ~Year) %>% 
-    plotly::add_trace() %>% 
+    plotly::plot_ly(y = ~LifeExpectancy, color = ~Country, x = ~log10(GdpPerCapita),size = ~Population, text = ~Country) %>% 
+    plotly::add_trace(mode = "lines+markers") %>% 
     plotly::layout(yaxis = list(range = list(min_le, max_le)), xaxis = list(range = list(min_gdp, max_gdp)))
   
   

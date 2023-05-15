@@ -17,13 +17,18 @@ ul {
     font-size: large;
     position: relative;
     margin: 5px;
+    color: black;
 
 }
 
 .wenn-large{
     width: 400px;
     height: 400px;
-    font-size: xxx-large;
+    /* font-size: xxx-large; */
+}
+
+.wenn .wenn-large{
+    background-color: rgba(var(--rgb), 1) !important;
 }
 
 .wenn-small{
@@ -31,36 +36,89 @@ ul {
     height: 100px;
 }
 
-.html {
-    background: rgb(250, 131, 52, 0.5);
 
+
+.html {
+    --rgb: 250, 131, 52;
+    background-color: rgba(var(--rgb), 1);    
 }
 
+.html::before{
+    content: "HTML";
+}
+
+.css::before{
+    content: "CSS";
+}
+
+.js::before{
+    content: "JavaScript";
+}
+
+
+
+.html::after{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f6e3"; 
+}
+
+.css::after{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f55d"; 
+}
+
+.js::after{
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: "\f6e8"; 
+}
+
+
 .css {
-    background: rgb(255, 253, 119, 0.5);
+    --rgb: 255, 253, 119;
+    background-color: rgba(var(--rgb), 1)
+    
+
 }
 
 .js {
-    background: rgb(56, 134, 151, 0.5);
+    --rgb: 56, 134, 151;
+    background-color: rgba(var(--rgb), 1)
+    
 
 }
 
 #wenn1 .html {
     left: 90px;
+    background-color: rgba(var(--rgb), 0.5);
 }
 
 #wenn1 .css {
     left: -90px;
+    background-color: rgba(var(--rgb), 0.5);
 }
 
 #wenn1 .js {
     top: 90px;
+    background-color: rgba(var(--rgb), 0.5);
 }
 
-.lektion-row{
-    
+.ui-server{
+    background-color: darkslategray; 
+    border-radius: 10px; 
+    padding-top: 5px; 
+    padding-bottom: 5px;
 }
 
+.font-large{
+    font-size: large
+}
+
+.black-stroke{
+    -webkit-text-stroke: 1px black;
+}
 
 .tagesprogramm{
     display: flex;
@@ -73,6 +131,14 @@ ul {
     align-items: stretch;
 
 }
+
+
+  .fragment.my-hl.visible {
+    text-decoration: underline;
+    text-shadow: 0 0 1em blue, 0 0 0.2em blue;
+
+
+  }
 
 .lektion > div:nth-child(1), .lektion > div:nth-child(2) > div{
     background-color: cadetblue;
@@ -106,4 +172,14 @@ ul {
 
 .blur .slide-background-content{
     filter: blur(10px);
+}
+
+.filter .slide-background-content{
+    filter: blur(10px);
+    filter: grayscale(80%) blur(5px);
+}
+
+.img-highlight{
+    position: absolute; 
+    background-color: rgba(255, 0, 0, 0.156);
 }

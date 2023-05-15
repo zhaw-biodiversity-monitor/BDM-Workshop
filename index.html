@@ -1,156 +1,462 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>Biodiversity Monitoring Workshop</title>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<link rel="stylesheet" href="revealjs/dist/reset.css">
-		<link rel="stylesheet" href="revealjs/dist/reveal.css">
-		<link rel="stylesheet" href="revealjs/dist/theme/black.css">
-		<link rel="stylesheet" href="style.css">
+	<title></title>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
+	<link rel="stylesheet" href="revealjs/dist/reset.css">
+	<link rel="stylesheet" href="revealjs/dist/reveal.css">
+	<link rel="stylesheet" href="revealjs/dist/theme/black.css">
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="revealjs/plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section>
 				<section>
-                    <section>
-                        <h1 class="r-fit-text">Biodiversity Monitoring</h1>
-                        <h2 class="r-fit-text fragment">Eine Einführung in R-Shiny</h2>
-                    </section>
+					<h1 class="r-fit-text">Biodiversity Monitoring</h1>
+					<h2 class="r-fit-text">Workshop Teil II</h2>
+					<h2 class="r-fit-text fragment">Eine Einführung in R-Shiny</h2>
+				</section>
 
-                    <section>
-                        <ol>
-                            <li>
-                                Introduction to R Shiny
-                                <ul>
-                                    <li>What is R Shiny?</li>
-                                    <li>Why use R Shiny?</li>
-                                    <li>R Shiny architecture</li>
-                                    <li>Prerequisites for building Shiny apps</li>
-                                </ul>
-                            </li>
-                        </ol>    
-                    </section>
+				<section>
+					<div class="tagesprogramm">
+						<div class="lektion">
+							<div class="fragment">Lektion 1</div>
+							<div class="fragment">
+								<div>Begrüssung / Kurze Einführung</div>
+								<div>Webtechnologien</div>
+							</div>
+						</div>
+						<div class="lektion">
+							<div class="fragment">Lektion 2</div>
+							<div class="fragment">
+								<div>Webtechnologien → Shiny</div>
+								<div>Shiny Apps programmieren</div>
+							</div>
+						</div>
+						<div class="lektion">
+							<div class="fragment">Lektion 3</div>
+							<div class="fragment">
+								<div>Shiny Apps programmieren</div>
+								<div>Wrap up</div>
+							</div>
+						</div>
 
-                    <section>
-                        <ol>       
-                            <li>
-                                Getting started with R Shiny
-                                <ul>
-                                    <li>Creating a new Shiny app</li>
-                                    <li>Understanding the structure of a Shiny app</li>
-                                    <li>The server and UI functions</li>
-                                    <li>Reactive programming concepts</li>
-                                </ul>
-                            </li>
-                        </ol>    
-                    </section>
+					</div>
+				</section>
 
-                    <section>
-                        <ol>
-                            <li>
-                                Building the UI
-                                <ul>
-                                    <li>HTML and CSS basics</li>
-                                    <li>Shiny UI elements</li>
-                                    <li>Layout options</li>
-                                    <li>Theming and styling</li>
-                                </ul>
-                            </li>
-                        </ol>    
-                    </section>
+			</section>
+			<section>
+				<section>
+					<h1>Was ist Shiny?</h1>
+				</section>
+				<section>
+					<div>
 
-                    <section>
-                        <ol>
-                            <li>
-                                Building the server
-                                <ul>
-                                    <li>Inputs and outputs</li>
-                                    <li>Reactive expressions</li>
-                                    <li>Using data in Shiny apps</li>
-                                    <li>Creating custom functions</li>
-                                </ul>
-                            </li>
-                        </ol>    
-                    </section>
+						<div style="background-color: white; border-radius: 20px;">
+							<p
+								style="font-size: large;text-align: left; padding-left: 30px;background-color: gray; border-radius: 20px 20px 0px 0px;">
+								https://shiny.posit.co/</p>
 
-                    <section>
-                        <ol>
-                            <li>
-                                Deploying your app
-                                <ul>
-                                    <li>Hosting options</li>
-                                    <li>Shiny Server and Shinyapps.io</li>
-                                    <li>Configuring your app for deployment</li>
-                                    <li>Troubleshooting common deployment issues</li>
-                                </ul>
-                            </li>
-                        </ol>    
-                    </section>
+							<!-- <img data-src="images/shiny.rstudio.png" style="width: 50%"> -->
+							<div
+								style="background-image: url('../images/shiny.rstudio.png'); height: 500px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="1"
+									style="width: 340px; height: 60px; top: 130px; left: 220px"></div>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="2"
+									style="width: 310px; height: 45px; top: 310px; left: 330px"></div>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="2"
+									style="width: 165px; height: 45px; top: 380px; left: 300px; border: 1px solid red;">
+								</div>
 
-                    <section>
-                        <ol>
-                            <li>
-                                Advanced topics
-                                <ul>
-                                    <li>Building interactive dashboards</li>
-                                    <li>Using Shiny with other packages (e.g., leaflet, ggplot2)</li>
-                                    <li>Building custom input/output widgets</li>
-                                    <li>Advanced reactive programming techniques</li>
-                                </ul>
-                            </li>
-                        </ol>    
-                    </section>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="4"
+									style="width: 270px; height: 60px; top: 190px; left: 435px"></div>
+								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="4"
+									style="width: 310px; height: 60px; top: 250px; left: 330px"></div>
+								<!-- <div style="position: absolute; background-color: rgba(255, 0, 0, 0.156); width: 340px; height: 60px;top: 130px; left: 220px"></div> -->
+							</div>
+						</div>
+					</div>
 
-                    <section>
-                        <ol>
-                            <li>
-                                Best practices
-                                <ul>
-                                    <li>Code organization and readability</li>
-                                    <li>Debugging and testing strategies</li>
-                                    <li>Performance optimization</li>
-                                    <li>User interface design considerations</li>
-                                </ul>
-                            </li>
-                        </ol>    
-                    </section>
+					<aside class="notes">
+						<ul>
+							<li>Easy Web Apps</li>
+							<li>Get Started in R</li>
+							<li>No web development skills required</li>
+						</ul>
+					</aside>
+				</section>
 
-                    <section>
-                        <ol>
-                            <li>
-                                Conclusion
-                                <ul>
-                                    <li>Recap of key concepts</li>
-                                    <li>Additional resources for learning R Shiny</li>
-                                    <li>Q&A session</li>
-                                </ul>
-                            </li>
-                        </ol>
-                    </section>
-			    </section>
+				<section>
+					<div style="background-color: white; border-radius: 20px; height: 500px;">
 
-            </div>
-        </div>
-        <script src="revealjs/dist/reveal.js"></script>
-		<script src="revealjs/plugin/notes/notes.js"></script>
-		<script src="revealjs/plugin/markdown/markdown.js"></script>
-		<script src="revealjs/plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+						<div>
+							<p style="color: black; font-size: xx-large;">Easy cycling without the compromises</p>
+							<p style="color: black; font-size: xx-large;">no balancing skills required</p>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+							<!-- <div style="background-image: url('../images/SM-903QW.jpg'); height: 300px; "></div> -->
+							<img class="" data-src="images/SM-903QW.jpg" height="300px">
+						</div>
+
+
+
+
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>Shiny ohne jegliches wissen über web development ist wie Fahrrad fahren mit Stützrädern
+							</li>
+							<li>Schneller Erfolg, jedoch ist das wissen nicht skalierbar</li>
+							<li>Stützräder werden zur Balast</li>
+						</ul>
+					</aside>
+				</section>
+
+
+				<section data-background-image="images/mecre2022.png" data-background-size="contain">
+
+					<aside class="notes">
+						<ul>
+							<li>Children who use the BB (Balance Bike) as the first bike had a significantly lower LA
+								(Learning Age) than Children who did not use it.</li>
+							<li>To maximise its effect, the balance bike should be used in the beginning of the learning
+								process</li>
+						</ul>
+					</aside>
+
+				</section>
+
+
+				<section>
+					<div class="r-hstack">
+						<img class="fragment" style="width: 49%; padding: 5px"
+							data-src="images/bicycle-patent-drawing-from-1891-vintage-aged-pixel-1085771235.jpeg">
+						<img class="fragment" style="width: 49%; padding: 5px"
+							data-src="images/bicycle-industry-613462980.png">
+					</div>
+				</section>
+
+
+
+			</section>
+			<section>
+				<section>
+					<h2 class="fragment highlight-red">Eine kurze</h2>
+					<h1 class="r-fit-text">Einführung in das Web</h1>
+				</section>
+
+				<section data-auto-animate>
+					<div class="r-stack" id="wenn1">
+						<div class="wenn fragment html" data-id="html"></div>
+						<div class="wenn fragment css" data-id="css"></div>
+						<div class="wenn fragment js" data-id="js"></div>
+					</div>
+				</section>
+
+				<section data-auto-animate>
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn html" data-id="html"></div>
+						<div class="wenn css" data-id="css"></div>
+						<div class="wenn js" data-id="js"></div>
+					</div>
+				</section>
+
+
+
+				<section data-auto-animate data-background-image="images/house-ge3d0e4f8f_1920.jpg" class="filter">
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn wenn-large html" data-id="html"></div>
+						<div class="wenn wenn-small css" data-id="css"></div>
+						<div class="wenn wenn-small js" data-id="js"></div>
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>HTML / "Das Mauerwerk"</li>
+							<li>Bildet das Grundgerüst jeder website</li>
+							<li>Exisiterte als erstes (1993), reicht eigentlich auch aus"</li>
+							<li><a href="http://motherfuckingwebsite.com/" target="_blank">motherfuckingwebsite.com/</a>
+							</li>
+							<li><a href="https://www.angelfire.com/super/badwebs/"
+									target="_blank">angelfire.com/super/badwebs/</a></li>
+						</ul>
+					</aside>
+
+				</section>
+
+
+				<section data-auto-animate data-background-image="images/How-to-Repair-old-walls.png" class="filter">
+
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn wenn-small html" data-id="html"></div>
+						<div class="wenn wenn-large css" data-id="css"></div>
+						<div class="wenn wenn-small js" data-id="js"></div>
+
+					</div>
+
+					<aside class="notes">
+						<ul>
+							<li>CSS: "Das Mauerwerk"</li>
+							<li>Wurde 1996 entwickelt, um html konsistenter und eifacher (ansprechend) gestalten zu
+								können</li>
+							<li>bestimmt, wie die verschiedenen elemente einer website auszusehen haben (Farben,
+								Grösse...) </li>
+						</ul>
+					</aside>
+
+				</section>
+				<section data-auto-animate data-background-image="images/phone-499991_960_720.jpg" class="filter">
+
+					<div class="r-hstack" id="wenn2">
+						<div class="wenn wenn-small html" data-id="html"></div>
+						<div class="wenn wenn-small css" data-id="css"></div>
+						<div class="wenn wenn-large js" data-id="js"></div>
+					</div>
+
+
+					<aside class="notes">
+						<ul>
+							<li>Javascript: "Der Zauberer"</li>
+							<li>Wurde 1995 entwickelt, um html dynamisch und interaktiv zu machen</li>
+							<li>bestimmt, wie die verschiedenen elemente einer website sich verhalten</li>
+							<li>(Animationen, Interaktionen, Reaktionen auf Benutzeraktionen)</li>
+						</ul>
+					</aside>
+				</section>
+
+				<section data-background-image="images/bicycle-industry-613462980-full.png">
+				</section>
+				<section data-background-image="images/bicycle-industry-613462980-full.png" data-transition="fade-in"
+					class="blur">
+
+					<h1 class="black-stroke">let's get our hands dirty!</h1>
+
+
+					<aside class="notes">
+
+						<ol>
+							<li>RStudio öffnen</li>
+							<li>Neuer Ordner erstellen</li>
+							<li>File > New File > Html-file</li>
+							<li>Save as > index.html</li>
+							<li>Eben diese Datei in einem Webbrowser öffnen</li>
+						</ol>
+					</aside>
+				</section>
+
+
+				<section data-background-image="images/paper-g4f11e9ed6_1920.jpg">
+					<h2 class="black-stroke">Publish</h2>
+				</section>
+			</section>
+
+			
+
+			<section>
+				<section>
+					<div class="r-hstack justify-around ui-server">
+						<h6 style="width: 33%; margin: 0px;">HTML / CSS / JS</h6>
+						<h6 style="width: 33%; margin: 0px;">→</h6>
+						<h6 style="width: 33%; margin: 0px;">R Shiny</h6>
+					</div>
+				</section>
+
+				<section>
+					<div style="display: grid; grid-template-columns: 50% 50%; column-gap: 5px; row-gap: 5px;">
+
+						<div class="ui-server" style="grid-column-start: span 2;">
+							<h3 class="r-fit-text" style="padding: 0 40px 0 40px;">Bestandteile einer R-Shiny App</h3>
+						</div>
+						<div class="fragment ui-server">
+							<i class="fa-solid fa-tablet-screen-button fa-5x"></i>
+							<p>User Interface</p>
+						</div>
+						<div class="fragment ui-server">
+							<i class="fa-solid fa-server fa-5x"></i>
+							<p>Server</p>
+						</div>
+
+						<div class="fragment ui-server font-large">besteht aus HTML+CSS, generiert aus R</div>
+						<div class="fragment ui-server font-large">besteht aus R Code (ersetzt Javascript)</div>
+						<div class="fragment ui-server font-large">Läuft im Browser des Nutzers</div>
+						<div class="fragment ui-server font-large">Läuft auf einem RShiny Server</div>
+
+
+
+					</div>
+
+				</section>
+
+
+				<section>
+					<pre><code data-trim class="r" data-line-numbers="1|3|5|7">
+						library(shiny)
+
+						ui <- ...                           # HTML + CSS
+
+						server <- ...                       # Server Logic
+
+						shinyApp(ui = ui, server = server)
+					</code></pre>
+
+					<aside class="notes">
+						<ul>
+							<li><code>ui <- ...</code>: Entweder pures html / css oder rcode, welcher solcher generiert</li>
+							<li><code>server <- ...</code>: eine funktion, welche die Server Logik beschreibt</li>
+							<li><code>shinyApp(ui = ui, server = server)</code> erstetllt ein Shiny App Objekt</li>
+
+						</ul>
+
+						Probieren wir das mal in R aus
+					</aside>
+				</section>
+				<section data-background-image="images/bicycle-industry-613462980-full.png">
+				</section>
+				<section data-background-image="images/bicycle-industry-613462980-full.png" data-transition="fade-in"
+					class="blur">
+
+					<h1 class="black-stroke">let's get our hands dirty!</h1>
+
+
+					<aside class="notes">
+
+						<ol>
+							<li>RStudio öffnen</li>
+							<li>Neues Projekt (!!!) erstellen</li>
+							<li>Neues R File erstellen</li>
+							<li>Save as > tagesfortschritt.R</li>
+						</ol>
+					</aside>
+				</section>
+
+			</section>
+
+			<section>
+				<section>
+					<h1>Basic Reactivity</h1>
+				</section>
+
+				<section>
+					<p>The key idea of reactive programming is to specify 
+						<span class="fragment custom my-hl">a graph of dependencies</span> so that 
+						<span class="fragment custom my-hl">when an input changes</span>, 
+						<span class="fragment custom my-hl">all related outputs are automatically updated</span>.</p>		
+						
+						<aside class="notes">
+							Warum ist das wichtig? Weil sonst das ganze R Script bei jeder Veränderung im App gesamthaft ausgeführt werden würde
+						</aside>
+				</section>
+
+				<section>
+				<div class="r-stack" style="width: 60%; margin-left: auto; margin-right: auto;">
+					<!-- <img class="fragment" src="images/reactivity-01.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-02.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-03.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-04.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<img class="" src="images/reactivity-05.png" alt="reactivity" style="width: 100%; height: auto;">
+					<!-- <img class="fragment" src="images/reactivity-06.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-07.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-08.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-09.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-10.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-11.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					<!-- <img class="fragment" src="images/reactivity-12.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+				</div>
+				</section>
+
+
+
+
+
+				<section>
+
+					<p>This makes the flow of an app considerably simpler, but it takes a while to get your head around how it all fits together.</p>
+
+								
+				</section>
+
+				<section>
+					<div style="text-align: left;">
+						<p>Futher reading:</p>
+					<ul>
+						<li><a href="https://mastering-shiny.org/basic-reactivity.html">mastering-shiny.org/basic-reactivity.html</a></li>
+						<li><a href="https://mastering-shiny.org/reactivity-intro.html">mastering-shiny.org/reactivity-intro.html</a></li>
+					</ul>
+					</div>
+				</section>
+
+				<section data-background-image="images/bicycle-industry-613462980-full.png">	</section>
+				<section data-background-image="images/bicycle-industry-613462980-full.png" data-transition="fade-in"
+				class="blur">
+	
+				<h1 class="black-stroke">let's get our hands dirty!</h1>
+	
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<h1>Reactivity Types</h1>
+				</section>
+
+				<section>
+					<ul>
+						<li>Reactive</li>
+						<li>Observe</li>
+						<li>ObserveEvent</li>
+					</ul>
+				</section>
+
+
+			</section>
+
+			<section>
+				<section>
+					<h1>Layouts</h1>
+			
+				</section>
+
+				<section>
+					<div class="r-stack" style="width: 60%; margin-left: auto; margin-right: auto;">
+						<img class="fragment" src="images/layout-sidebar.png" alt="reactivity" style="width: 100%; height: auto;">
+						<img class="fragment" src="images/layout-multirow.png" alt="reactivity" style="width: 100%; height: auto;">
+					</div>
+
+				</section>
+			</section>
+
+		
+
+		</div>
+	</div>
+	<script src="revealjs/dist/reveal.js"></script>
+	<script src="revealjs/plugin/notes/notes.js"></script>
+	<script src="revealjs/plugin/highlight/highlight.js"></script>
+	<script src="revealjs/plugin/zoom/zoom.js"></script>
+	<script src="revealjs/plugin/search/search.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+			autoAnimateEasing: "cubic-bezier(0.83, 0, 0.17, 1)",
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealHighlight, RevealNotes, RevealZoom, RevealSearch]
+		});
+	</script>
+</body>
+
 </html>

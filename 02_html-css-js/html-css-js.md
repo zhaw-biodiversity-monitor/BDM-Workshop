@@ -219,11 +219,11 @@ function age_in_days(year_of_birth, year_today){
     </head>
 
     <body>
--       <h1>Meine Seite</h1>
-+       <h1>Tagesfortschritt</h1>
--       <p>Das ist meine Seite</p>
-+       <p>Wie weit ist der Tag bereits fortgeschritten?</p>
-       <script src="script.js"></script>
+-      <h1>Meine Seite</h1>
++      <h1>Tagesfortschritt</h1>
+-      <p>Das ist meine Seite</p>
++      <p>Wie weit ist der Tag bereits fortgeschritten?</p>
+       <script src="script.js"></scrip>
     </body>
 
 </html>
@@ -245,9 +245,7 @@ Progress bar hinzufügen (note to self: mit value rumspielen. label später hinz
     </head>
 
     <body>
-        <h1>Meine Seite</h1>
         <h1>Tagesfortschritt</h1>
-        <p>Das ist meine Seite</p>
         <p>Wie weit ist der Tag bereits fortgeschritten?</p>
 
 +       <label for="progress" id="percent"></label>
@@ -260,9 +258,9 @@ Progress bar hinzufügen (note to self: mit value rumspielen. label später hinz
 In der Console die Logik für die Berechtung des Tagesfortschritts in Prozent:
 
 ```js
-const now = new Date();
-const hours_dec = now.getHours() + now.getMinutes()/60 + now.getSeconds()/3600;
-var percent = hours_dec/24*100
+let now = new Date();
+let hours_dec = now.getHours() + now.getMinutes()/60 + now.getSeconds()/3600;
+let percent = hours_dec/24*100
 ```
 
 

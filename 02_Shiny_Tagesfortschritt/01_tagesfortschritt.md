@@ -77,34 +77,13 @@ shinyApp(ui, server)
 ```
 
 
-```diff
-library(shiny)
-library(lubridate)
-
-ui <- tagList(
-     h1("Tagesfortschritt"),
-     p("Wie Weit ist der Tag fortgeschritten?"),
-  )
-
-
-server <- function(input, output, session){
-+  now <- Sys.time()
-+  
-+  percent <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
-
-}
-
-shinyApp(ui, server)
-```
-
-
 Viel eleganter, v.a. um später die übersicht zu behalten, ist es, wenn wir die Berechnung in eine Funktion auslagern.
 
 ```diff
 library(shiny)
 library(lubridate)
 
-+get_percent <- function(x){
++get_percent <- function(){
 +  now <- Sys.time()
 +  diff <- ((hour(now) + minute(now)/60 + second(now)/3600)/24)*100
 +  return(diff)
@@ -166,9 +145,7 @@ server <- function(input, output, session){
 shinyApp(ui, server)
 ```
 
-Diese 
-
-
+Um die App zu aktualisieren, müssen wir die Funktion `invalidateLater()` verwenden.
 
 ```diff
 library(shiny)
