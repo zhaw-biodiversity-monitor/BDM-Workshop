@@ -23,10 +23,16 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<section>
+				<section class="titleslide">
 					<h1 class="r-fit-text">Biodiversity Monitoring</h1>
 					<h2 class="r-fit-text">Workshop Teil II</h2>
 					<h2 class="r-fit-text fragment">Eine Einführung in R-Shiny</h2>
+
+					<!-- <p style="font-size: large; text-align: left;">Slides</p> -->
+					<ul class="fragment" style="font-size: large; text-align: left;">
+						<li>Fulll URL: <a href="https://zhaw-biodiversity-monitor.github.io/BDM-Workshop/">zhaw-biodiversity-monitor.github.io/BDM-Workshop</a></li>
+						<li>Short URL: <a href="https://tinyurl.com/shiny-workshop">tinyurl.com/shiny-workshop</a></li>
+					</ul>
 				</section>
 
 				<section>
@@ -58,7 +64,7 @@
 
 			</section>
 			<section>
-				<section>
+				<section class="titleslide">
 					<h1>Was ist Shiny?</h1>
 				</section>
 				<section>
@@ -70,8 +76,8 @@
 								https://shiny.posit.co/</p>
 
 							<!-- <img data-src="images/shiny.rstudio.png" style="width: 50%"> -->
-							<div
-								style="background-image: url('../images/shiny.rstudio.png'); height: 500px; background-size: contain; background-repeat: no-repeat; background-position: center;">
+							<div class="img-overlay-container" 
+								style="background-image: url('images/shiny.rstudio.png'); height: 500px;">
 								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="1"
 									style="width: 340px; height: 60px; top: 130px; left: 220px"></div>
 								<div class="fragment fade-in-then-out img-highlight" data-fragment-index="2"
@@ -99,14 +105,16 @@
 				</section>
 
 				<section>
-					<div style="background-color: white; border-radius: 20px; height: 500px;">
+					<div
+						style="background-color: white; border-radius: 20px; height: 500px; display: flex; justify-content: center;">
 
-						<div>
-							<p style="color: black; font-size: xx-large;">Easy cycling without the compromises</p>
-							<p style="color: black; font-size: xx-large;">no balancing skills required</p>
+						<div style="width: 70%">
+							<p style="color: black; font-size: 50px; font-weight: bold;">Easy cycling without the
+								compromises</p>
+							<p style="color: black; font-size: 15px;">no balancing skills required</p>
 
 							<!-- <div style="background-image: url('../images/SM-903QW.jpg'); height: 300px; "></div> -->
-							<img class="" data-src="images/SM-903QW.jpg" height="300px">
+							<img class="" data-src="images/SM-903QW.jpg" height="250px">
 						</div>
 
 
@@ -152,7 +160,7 @@
 
 			</section>
 			<section>
-				<section>
+				<section class="titleslide">
 					<h2 class="fragment highlight-red">Eine kurze</h2>
 					<h1 class="r-fit-text">Einführung in das Web</h1>
 				</section>
@@ -246,6 +254,8 @@
 
 					<aside class="notes">
 
+						walkthrough-html-css-js.md
+
 						<ol>
 							<li>RStudio öffnen</li>
 							<li>Neuer Ordner erstellen</li>
@@ -262,15 +272,15 @@
 				</section>
 			</section>
 
-			
+
 
 			<section>
-				<section>
-					<div class="r-hstack justify-around ui-server">
-						<h6 style="width: 33%; margin: 0px;">HTML / CSS / JS</h6>
-						<h6 style="width: 33%; margin: 0px;">→</h6>
-						<h6 style="width: 33%; margin: 0px;">R Shiny</h6>
-					</div>
+				<section class="titleslide">
+
+					<h2>HTML | CSS | JS</h2>
+					<h2>→</h2>
+					<h2>R Shiny</h2>
+
 				</section>
 
 				<section>
@@ -313,7 +323,8 @@
 
 					<aside class="notes">
 						<ul>
-							<li><code>ui <- ...</code>: Entweder pures html / css oder rcode, welcher solcher generiert</li>
+							<li><code>ui <- ...</code>: Entweder pures html / css oder rcode, welcher solcher generiert
+							</li>
 							<li><code>server <- ...</code>: eine funktion, welche die Server Logik beschreibt</li>
 							<li><code>shinyApp(ui = ui, server = server)</code> erstetllt ein Shiny App Objekt</li>
 
@@ -329,8 +340,9 @@
 
 					<h1 class="black-stroke">let's get our hands dirty!</h1>
 
-
 					<aside class="notes">
+
+						walkthrough-shiny-tagesfortschritt.md
 
 						<ol>
 							<li>RStudio öffnen</li>
@@ -344,154 +356,216 @@
 			</section>
 
 			<section>
-				<section>
+				<section class="titleslide">
 					<h1>Basic Reactivity</h1>
 				</section>
 
 				<section>
-					<p>The key idea of reactive programming is to specify 
-						<span class="fragment custom my-hl">a graph of dependencies</span> so that 
-						<span class="fragment custom my-hl">when an input changes</span>, 
-						<span class="fragment custom my-hl">all related outputs are automatically updated</span>.</p>		
-						
-						<aside class="notes">
-							Warum ist das wichtig? Weil sonst das ganze R Script bei jeder Veränderung im App gesamthaft ausgeführt werden würde
-						</aside>
+					<i class="fa-solid fa-quote-left fa-1x fa-pull-left"></i>
+					<p style="text-align: left;">The key idea of reactive programming is to specify
+						<span class="fragment custom my-hl">a graph of dependencies</span> so that
+						<span class="fragment custom my-hl">when an input changes</span>,
+						<span class="fragment custom my-hl">all related outputs are automatically updated</span>.
+					</p>
+
+
+					<span style="font-size: 20px;">Wickham (2019) in <a
+							href="https://mastering-shiny.org/basic-reactivity.html">Mastering Shiny</a></span>
+
+					<aside class="notes">
+						Warum ist das wichtig? Weil sonst das ganze R Script bei jeder Veränderung im App gesamthaft
+						ausgeführt werden würde
+					</aside>
 				</section>
 
 				<section>
-				<div class="r-stack" style="width: 60%; margin-left: auto; margin-right: auto;">
-					<!-- <img class="fragment" src="images/reactivity-01.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-02.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-03.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-04.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<img class="" src="images/reactivity-05.png" alt="reactivity" style="width: 100%; height: auto;">
-					<!-- <img class="fragment" src="images/reactivity-06.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-07.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-08.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-09.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-10.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-11.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-					<!-- <img class="fragment" src="images/reactivity-12.png" alt="reactivity" style="width: 100%; height: auto;"> -->
-				</div>
-				</section>
+					<div class="r-stack" style="width: 60%; margin-left: auto; margin-right: auto;">
+						<!-- <img class="fragment" src="images/reactivity-01.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-02.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-03.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-04.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<img class="" src="images/reactivity-05.png" alt="reactivity"
+							style="width: 100%; height: auto;">
+						<!-- <img class="fragment" src="images/reactivity-06.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-07.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-08.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-09.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-10.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-11.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+						<!-- <img class="fragment" src="images/reactivity-12.png" alt="reactivity" style="width: 100%; height: auto;"> -->
+					</div>
 
+					<span style="font-size: 20px;">aus Wickham (2019), <a
+							href="https://mastering-shiny.org/basic-reactivity.html">Mastering Shiny</a></span>
 
-
-
-
-				<section>
-
-					<p>This makes the flow of an app considerably simpler, but it takes a while to get your head around how it all fits together.</p>
-
-								
 				</section>
 
 				<section>
-					<div style="text-align: left;">
+
+					<i class="fa-solid fa-quote-left fa-1x fa-pull-left"></i>
+					<p style="text-align: left;">This makes the flow of an app considerably simpler,
+						<span class="fragment custom my-hl">but it takes a while to get your head around</span>
+						how it all fits together.
+					</p>
+
+					<div style="text-align: left;" class="fragment">
 						<p>Futher reading:</p>
-					<ul>
-						<li><a href="https://mastering-shiny.org/basic-reactivity.html">mastering-shiny.org/basic-reactivity.html</a></li>
-						<li><a href="https://mastering-shiny.org/reactivity-intro.html">mastering-shiny.org/reactivity-intro.html</a></li>
-					</ul>
+						<ul>
+							<li><a
+									href="https://mastering-shiny.org/basic-reactivity.html">mastering-shiny.org/basic-reactivity.html</a>
+							</li>
+							<li><a
+									href="https://mastering-shiny.org/reactivity-intro.html">mastering-shiny.org/reactivity-intro.html</a>
+							</li>
+						</ul>
 					</div>
 				</section>
 
-				<section data-background-image="images/bicycle-industry-613462980-full.png">	</section>
-				<section data-background-image="images/bicycle-industry-613462980-full.png" data-transition="fade-in"
-				class="blur">
-	
-				<h1 class="black-stroke">let's get our hands dirty!</h1>
-	
-				</section>
-			</section>
-
-			<section>
 				<section>
-					<h1 class="r-fit-text">Reactive building blocks</h1>
+					
+
+						<div class="img-overlay-container" style="background-image: url('images/reactive.png'); height: 552px;">
+						
+							<div class="fragment fade-in-then-out img-highlight" 
+										style="width: 110px; height: 60px; top: 250px; left: 40px"></div>
+						</div>
+				
+
+					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>
 				</section>
 
-				<section>
-					<img data-src="images/reactive.png"></img>
-
-					<a href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>
-				</section>
 
 				<section>
 
-					Reactive Inputs 
+					Reactive Inputs
 
-					<div class="reactive-inputs">
+					<div style="grid-template-columns: auto; gap: 15px;">
 
-						<div>actionButton()</div>
-						<div><input class = "action" type="button" value="Go"></div>
-						<div>checkboxGroupInput()</div>
-						<div>
+						<div class="reactive-input-rows fragment">
+							<div>actionButton()</div>
+							<div><input class="action" type="button" value="Go"></div>
+						</div>
+						<div class="reactive-input-rows fragment">
+							<div>checkboxGroupInput()</div>
+							<div>
 								<input type="checkbox" id="scales" name="scales" checked>
 								<label for="scales">Choice 1</label> <br>
-						  
+
 								<input type="checkbox" id="horns" name="horns">
 								<label for="horns">Choice 2</label>
+							</div>
 						</div>
-						<div>checkboxInput()</div>
-						<div>
-							<input type="checkbox" id="scales" name="scales" checked>
-							<label for="scales">Choose</label> <br>
+						<div class="reactive-input-rows fragment">
+							<div>checkboxInput()</div>
+							<div>
+								<input type="checkbox" id="scales" name="scales" checked>
+								<label for="scales">Choose</label> <br>
+							</div>
 						</div>
 
-						<div>dateInput() / dateRangeInput()</div>
-						<div><input type="date" id="start"></div>
+						<div class="reactive-input-rows fragment">
+							<div>dateInput() / dateRangeInput()</div>
+							<div><input type="date" id="start"></div>
+						</div>
 
-						<div>fileInput()</div>
-						<div><input type="file" id="avatar"></div>
+						<div class="reactive-input-rows fragment">
+							<div>fileInput()</div>
+							<div><input type="file" id="avatar"></div>
+						</div>
 
-						<div>numericInput()</div>
-						<div><input type="number"></div>
+						<div class="reactive-input-rows fragment">
+							<div>numericInput()</div>
+							<div><input type="number"></div>
+						</div>
 
-						<div>passwordInput()</div>
-						<div><input type="password"></div>
+						<div class="reactive-input-rows fragment">
+							<div>passwordInput()</div>
+							<div><input type="password"></div>
+						</div>
 
-						<div>radioButtons()</div>
-						<div>
-								<input type="radio" id="huey" name="drone" value="huey"
-									   checked>
+						<div class="reactive-input-rows fragment">
+							<div>radioButtons()</div>
+							<div>
+								<input type="radio" id="huey" name="drone" value="huey" checked>
 								<label for="huey">Huey</label>
-						  
+
 								<input type="radio" id="dewey" name="drone" value="dewey">
 								<label for="dewey">Dewey</label>
-						  
+
 								<input type="radio" id="louie" name="drone" value="louie">
 								<label for="louie">Louie</label>
+							</div>
 						</div>
 
-						<div>sliderInput()</div>
-						<div><input type="range"></div>
+						<div class="reactive-input-rows fragment">
+							<div>sliderInput()</div>
+							<div><input type="range"></div>
+						</div>
 
-						<div>submitButton()</div>
-						<div><input class = "action" type="button" value="Apply Changes"></div>
+						<div class="reactive-input-rows fragment">
+							<div>submitButton()</div>
+							<div><input class="action" type="button" value="Apply Changes"></div>
+						</div>
 
-						<div>textInput()</div>
-						<div><input type="text"></div>
+						<div class="reactive-input-rows fragment">
+							<div>textInput()</div>
+							<div><input type="text"></div>
+						</div>
 
 					</div>
+
+					<p class="fragment" style="font-size: large;">See <a
+							href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet/</a>
+					</p>
+
 
 				</section>
 
 
-				<section data-visibility="hidden">
+
+				
+
+				<section>
+					<!-- <img data-src="images/reactive.png"></img> -->
+
+					<div class="img-overlay-container" style="background-image: url('images/reactive.png'); height: 552px;">
+						<div class="fragment fade-in-then-out img-highlight" 
+									style="width: 110px; height: 60px; top: 250px; left: 815px"></div>
+					</div>
+
+					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>
+				</section>
+
+
+
+				<section>
 
 					Reactive Outputs
 
-					<img data-src="images/reactive-outputs.png"></img>
+					<pre><code data-trim class="r" data-line-numbers="|3|6">
+						library(shiny)
 
-					Mehr ouputs sind auf <a href="http://www.htmlwidgets.org/">htmlwidgets.org</a> zu finden
+						ui <- plotOutput("plot")
+
+						server <- function(input, output, session){
+							output$plot <- renderPlot(plot(rnorm(100)))
+						}
+
+
+						shinyApp(ui, server)
+					</code></pre>
+
+					<aside class="notes">
+						Reactive Outputs kommen immer in paaren. render* um den output zu generieren, *Output um den
+						output zu rendern.
+					</aside>
 				</section>
 
 				<section>
 
-					Reactive Outputs 
+					Reactive Outputs
 
-					
+
 
 					<div class="reactive-outputs">
 
@@ -520,35 +594,58 @@
 						<div>uiOutput()</div>
 
 					</div>
-					
-				</section>
 
+					<ul class="fragment" style="font-size: large; padding-top: 20px;">
+						<li>See <a
+								href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet/</a>
+						</li>
+						<li>Mehr ouputs sind auf <a href="http://www.htmlwidgets.org/">htmlwidgets.org</a> zu finden
+						</li>
+					</ul>
+
+					<aside class="notes">
+						<ul>
+							<li>Reactive Outputs kommen immer in paaren. render* um den output zu generieren, *Output um
+								den output zu rendern.</li>
+							<li>die jeweiligen Packages liefern meist die benötigten Funktionen, um diesen in Shiny zu
+								integrieren</li>
+						</ul>
+
+					</aside>
+
+
+				</section>
 
 				<section>
-					<pre><code data-trim class="r" data-line-numbers="|3|6">
-						library(shiny)
+					<!-- <img data-src="images/reactive.png"></img> -->
 
-						ui <- plotOutput("plot")
+					<div class="img-overlay-container" style="background-image: url('images/reactive.png'); height: 552px;">
+						<div class="fragment fade-in-then-out img-highlight" style="width: 180px; height: 40px; top: 90px; left: 180px"></div>
+						<div class="fragment fade-in-then-out img-highlight" style="width: 180px; height: 80px; top: 100px; left: 530px"></div>
+						<div class="fragment fade-in-then-out img-highlight" style="width: 160px; height: 80px; top: 395px; left: 450px"></div>
+					</div>
 
-						server <- function(input, output, session){
-							output$plot <- renderPlot(plot(rnorm(100)))
-						}
+					<a style="font-size: large" href="https://shiny.posit.co/r/articles/start/cheatsheet/">shiny.posit.co/r/articles/start/cheatsheet</a>				</section>
 
 
-						shinyApp(ui, server)
-					</code></pre>
+
+
+
+				<section data-background-image="images/bicycle-industry-613462980-full.png"> </section>
+				<section data-background-image="images/bicycle-industry-613462980-full.png" data-transition="fade-in"
+					class="blur">
+
+					<h1 class="black-stroke">let's get our hands dirty!</h1>
+
 				</section>
-
-
-				
-
-
 			</section>
 
+	
+
 			<section>
-				<section>
+				<section class="titleslide">
 					<h1>Layouts</h1>
-			
+
 				</section>
 
 				<section data-auto-animate>
@@ -562,7 +659,7 @@
 									# output 2
 								)
 							</code></pre>
-	
+
 						</div>
 
 						<div>
@@ -573,7 +670,7 @@
 								<div data-id="output2" class="shiny-output">Output 2</div>
 							</div>
 						</div>
-				
+
 					</div>
 				</section>
 				<section data-auto-animate>
@@ -588,7 +685,7 @@
 									# output 2
 								)
 							</code></pre>
-	
+
 						</div>
 						<div>
 							<div class="shiny-container">
@@ -618,7 +715,7 @@
 										)
 									)
 							</code></pre>
-	
+
 						</div>
 						<div>
 							<div class="shiny-container shiny-container2">
@@ -634,23 +731,73 @@
 				</section>
 
 				<section>
-					Es gibt noch viele andere Layouts:
+					<p style="text-align: left;">Es gibt noch viele andere Layouts:</p>
 
 					<ul>
 						<li class="fragment"><code>fluidPage()</code> mit <code>fluidRow()</code></li>
-						<li class="fragment"><code>fluidPage()</code> mit <code>tabsetPanel()</code> und <code>tabPanel()</code></li>
-						<li class="fragment"><code>fluidPage()</code> mit <code>navlistPanel()</code>und <code>tabPanel()</code></li>
-						<li class="fragment"><code>navbarPage()</code> mit <code>tabPanel()</code>und <code>navbarMenu()</code></li>
+						<li class="fragment"><code>fluidPage()</code> mit <code>tabsetPanel()</code> und
+							<code>tabPanel()</code>
+						</li>
+						<li class="fragment"><code>fluidPage()</code> mit <code>navlistPanel()</code>und
+							<code>tabPanel()</code>
+						</li>
+						<li class="fragment"><code>navbarPage()</code> mit <code>tabPanel()</code>und
+							<code>navbarMenu()</code>
+						</li>
 
 					</ul>
 
-					<p class="fragment">Siehe <a href="https://shiny.posit.co/r/articles/build/layout-guide/">shiny.posit.co/r/articles/build/layout-guide/</a> und <a href="https://mastering-shiny.org/action-layout.html">mastering-shiny.org/action-layout.html</a> für mehr Informationen.</p>
+					<p class="fragment" style="text-align: left; font-size: large;">Siehe auch:
+						<a
+							href="https://shiny.posit.co/r/articles/build/layout-guide/">shiny.posit.co/r/articles/build/layout-guide/</a>
+						und
+						<a
+							href="https://mastering-shiny.org/action-layout.html">mastering-shiny.org/action-layout.html</a>
+
+					</p>
 
 
 				</section>
 			</section>
 
-		
+
+			<section>
+				<section class="titleslide">
+					<h1>Publish / Deploy</h1>
+				</section>
+
+				<section>
+
+					<p>Optionen shinyApps zu publishen</p>
+
+
+					<div class="deploy">
+
+						<div class="fragment">
+							<div>
+								<p>ZHAW Posit Connect Server</p>
+								<a href="https://rstudio.zhaw.ch/rsconnect">rstudio.zhaw.ch/rsconnect/</a>
+							</div>
+						</div>
+						<div class="fragment">
+							<div>
+								<p>Shinyapps.io</p>
+								<a href="https://www.shinyapps.io/">www.shinyapps.io/</a>
+							</div>
+
+						</div>
+						<div class="fragment">
+							Web-R / WASM
+						</div>
+						<div class="fragment">
+							Custom R Shiny Server
+						</div>
+
+					</div>
+				</section>
+			</section>
+
+
 
 		</div>
 	</div>

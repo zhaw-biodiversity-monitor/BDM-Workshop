@@ -121,6 +121,8 @@ ul {
     flex-direction: column;
 }
 
+
+
 .lektion {
     display: flex;
     justify-content: space-around;
@@ -131,7 +133,7 @@ ul {
 
 .fragment.my-hl.visible {
     text-decoration: underline;
-    text-shadow: 0 0 1em blue, 0 0 0.2em blue;
+    text-shadow: 0 0 1em rgb(255, 255, 0), 0 0 0.2em rgb(255, 255, 0);
 
 
 }
@@ -183,6 +185,13 @@ ul {
     background-color: rgba(255, 0, 0, 0.156);
 }
 
+.img-overlay-container {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-sizing: border-box;
+}
+
 
 /* https://coolors.co/palette/264653-2a9d8f-e9c46a-f4a261-e76f51 */
 .shiny-container {
@@ -230,7 +239,7 @@ ul {
     padding-top: 30px;
 }
 
-.reactive-outputs > div {
+.reactive-outputs>div {
     padding: 10px;
     background-color: #264653;
     border-radius: 15px;
@@ -241,7 +250,7 @@ ul {
 
 }
 
-.reactive-inputs{
+/* .reactive-inputs {
     display: grid;
     grid-template-columns: 70% 30%;
     gap: 15px;
@@ -250,33 +259,76 @@ ul {
 
 }
 
-.reactive-inputs>div{
+.reactive-inputs>div {
     align-content: end;
     align-items: center
 }
 
-.reactive-inputs div:nth-child(odd){
+.reactive-inputs div:nth-child(odd) {
     text-align: left;
     padding-left: 40px;
     font-family: monospace;
     font-size: 30px;
 }
 
-.reactive-inputs div{
+.reactive-inputs div {
     background-color: #264653;
     border-radius: 15px;
     font-size: 20px;
+} */
 
+.reactive-input-rows {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    margin: 10px;
+    column-gap: 10px;
 
 }
 
-.action{
+.reactive-input-rows>div {
+    background-color: #264653;
+    align-content: center;
+    border-radius: 15px;
+
+}
+
+.reactive-input-rows div:nth-child(odd) {
+    text-align: left;
+    padding-left: 40px;
+    font-family: monospace;
+    font-size: 30px;
+}
+
+.reactive-input-rows div:nth-child(even) {
+    text-align: left;
+    padding-left: 40px;
+    font-size: 20px;
+}
+
+.action {
     padding: 5px;
 }
 
-#checkbox{
+#checkbox {
     list-style-type: none;
 }
 
+.titleslide .slide-background-content {
+    background-color: darkslategray;
+}
 
+.deploy {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 50px;
+}
 
+.deploy>div {
+    background-color: #264653;
+    border-radius: 15px;
+    height: 200px;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex
+}
