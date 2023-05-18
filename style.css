@@ -210,6 +210,10 @@ ul {
     grid-template-columns: 30% 70%;
 }
 
+.shiny-container3 {
+    grid-template-columns: 70% 30%;
+}
+
 .shiny-container>div {
     text-align: left;
     padding-left: 20px;
@@ -228,8 +232,18 @@ ul {
 
 }
 
-.shiny-container2 .shiny-titlepanel {
+.shiny-container2 .shiny-titlepanel,
+.shiny-container3 .shiny-titlepanel{
     grid-column: 1 / span 2;
+}
+
+.shiny-container4 .shiny-titlepanel{
+    grid-column: 1 / span 12;
+}
+
+
+.shiny-container4 {
+    grid-template-columns: repeat(12, 1fr);
 }
 
 .reactive-outputs {

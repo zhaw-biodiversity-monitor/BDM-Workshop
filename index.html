@@ -30,8 +30,8 @@
 
 					<!-- <p style="font-size: large; text-align: left;">Slides</p> -->
 					<ul class="fragment" style="font-size: large; text-align: left;">
-						<li>Fulll URL: <a href="https://zhaw-biodiversity-monitor.github.io/BDM-Workshop/">zhaw-biodiversity-monitor.github.io/BDM-Workshop</a></li>
-						<li>Short URL: <a href="https://tinyurl.com/shiny-workshop">tinyurl.com/shiny-workshop</a></li>
+						<div class="r-fit-text">Fulll URL: <a href="https://zhaw-biodiversity-monitor.github.io/BDM-Workshop/">zhaw-biodiversity-monitor.github.io/BDM-Workshop</a></div>
+						<div class="r-fit-text">Short URL: <a href="https://tinyurl.com/shiny-workshop">tinyurl.com/shiny-workshop</a></div>
 					</ul>
 				</section>
 
@@ -723,12 +723,99 @@
 						</div>
 					</div>
 				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									sidebarLayout(
+										position = "right",
+										sidebarPanel(
+											# input 1
+											# input 2
+										),
+										mainPanel(
+											# output 1
+											# output 2
+										)
+									)
+							</code></pre>
 
+						</div>
+						<div>
+							<div class="shiny-container shiny-container3">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="output1" class="shiny-output">Output 1</div>
+								<div data-id="input1" class="shiny-input">Input 1</div>
+
+								<div data-id="output2" class="shiny-output">Output 2</div>
+								<div data-id="input2" class="shiny-input">Input 2</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+				<section data-auto-animate>
+					<div style="display: grid; grid-template-columns: 50% 50%;">
+						<div>
+							<pre data-id="layout"><code data-trim class="R" data-line-numbers="">
+								ui <- fluidPage(
+									titlePanel("titlePanel()"),
+									sidebarLayout(
+										fluidRow(
+											column(
+												# Input 1 
+												width = 3
+												),
+											column(
+												# Output 1 
+												width = 9
+												),
+										  ),
+										fluidRow(
+											column(
+												# Input 2 
+												width = 6
+												),
+											column(
+												# Output 2 
+												width = 6
+												),
+										  ),
+										  )
+									)
+							</code></pre>
+
+						</div>
+						<div>
+							<div class="shiny-container shiny-container4">
+								<div data-id="titlepanel" class="shiny-titlepanel">titlePanel()</div>
+								<div data-id="input1" class="shiny-input" style="grid-column-start: span 3;">Input 1</div>
+								<div data-id="output1" class="shiny-output" style="grid-column-start: span 9;">Output 1</div>
+								<div data-id="input2" class="shiny-input" style="grid-column-start: span 5;">Input 1</div>
+								<div data-id="output2" class="shiny-output" style="grid-column-start: span 7;">Output 2</div>
+
+								<!-- <div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div>
+								<div class="shiny-input">1</div> -->
+
+
+							</div>
+						</div>
+					</div>
+				</section>
 				<section>
 					<p style="text-align: left;">Es gibt noch viele andere Layouts:</p>
 
 					<ul>
-						<li class="fragment"><code>fluidPage()</code> mit <code>fluidRow()</code></li>
 						<li class="fragment"><code>fluidPage()</code> mit <code>tabsetPanel()</code> und
 							<code>tabPanel()</code>
 						</li>
